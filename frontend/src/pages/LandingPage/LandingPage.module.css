@@ -126,5 +126,91 @@
     margin-top: auto; /* Keeps the image at the bottom */
   }
   
+  .howItWorksContainer {
+    background-image: url(https://justliv.org/assets/images/sky.png);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    padding: 64px 20px 64px 20px;
+    height: 590px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.howItWorksContainer h2{
+    font-size: 2.4rem;
+    font-family: 'Fraunces',serif;
+    font-weight: 400;
+    margin-bottom: 3.2rem;
+    color:white;
+}
+
+.contentHowItWorks{
+    width: 576px;
+    box-sizing: content-box;
+    margin: auto;
+    margin-top:0px;
+    position: relative;
+}
+
+.contentHowItWorks span{
+    display: flex;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.contentHowItWorks .hiwIconBox{
+    background-color: #51658e;
+    border-radius: 0.5rem;
+    width: 60px;
+    height: 60px;
+    padding:1.6rem;
+    margin-right: 24px;
+    
+}
+
+.hiwColContent{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color:white;
+    width: 468px;
+}
+
+.hiwColContent h1{
+    font-size: 1.8rem;
+    margin-bottom: 4px;
+    font-weight: 600;
+    font-family: 'Lato',serif;
+
+}
 
 
+.hiwColContent h2{
+    font-size: 1.6rem;
+    font-weight: 400;   
+    font-family: 'Lato',serif;
+    margin:0;
+
+}
+
+.contentHowItWorks .image0{  
+    width: 42px;
+    height: 45px;
+    position:absolute;
+    z-index: 100;
+    top:60px;
+    left: 80px;
+}
+
+
+.contentHowItWorks .image1{
+    width: 48px;
+    height: 61px;
+    position:absolute;
+    z-index: 100;
+    top:180px;
+    left:137px;
+}
