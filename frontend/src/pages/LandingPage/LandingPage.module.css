@@ -1,5 +1,6 @@
 .LandingPage {
   width: 100vw;
+  overflow-x:hidden;
 }
 
 .bannerContainer {
@@ -9,6 +10,14 @@
 }
 
 .banner {
+  width: 100%;
+  height: 100vh;
+  object-fit: fill;
+  max-width: 100%;
+}
+
+.bannerMobile{
+  display: none;
   width: 100%;
   height: 100vh;
   object-fit: fill;
@@ -49,7 +58,7 @@
   font-weight: 400;
   line-height: 1.25;
   font-family: "Fraunces", serif;
-  width: 522px;
+  max-width: 522px;
   text-align: center;
   margin-bottom: 16px;
 }
@@ -62,155 +71,455 @@
   margin-bottom: 32px;
 }
 
-
-.cardContainer{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding:80px;
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 80px;
 }
 
-.cardContainer h1{
-    margin-bottom: 32px;
-    font-size: 2.4rem;
-    font-family: 'Fraunces',serif;
-    font-weight: 400;
-    color:oklch(21% .006 285.885);
+.cardContainer h1 {
+  margin-bottom: 32px;
+  font-size: 2.4rem;
+  font-family: "Fraunces", serif;
+  font-weight: 400;
+  color: oklch(21% 0.006 285.885);
 }
 
-.gridContainer{
-    width: 100%;
-    height: 100%;
-
+.gridContainer {
+  width: 100%;
+  height: 100%;
+  max-width: 1536px;
 }
 
 .gridContainer ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-    gap: 24px;
-    width: 100%;
-  }
-  
-  .gridContainer .icon{
-    margin-bottom: 8px;
-  }
-  .gridContainer li {
-    padding: 24px;
-    box-shadow: 0 0 16px 2px #0000000d;
-    font-size: 1.6rem;
-    color: #959aa2;
-    font-weight: 400;
-    font-family: 'Lato', serif;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .gridContainer li h1 {
-    margin-bottom: 8px;
-    font-family: 'Fraunces', serif;
-    font-size: 2.1rem;
-    color: #384252;
-  }
-  
-  .gridContainer li p {
-    margin-bottom: 16px;
-  }
-  
-  .gridContainer img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 0.5rem;
-    margin-top: auto; /* Keeps the image at the bottom */
-  }
-  
-  .howItWorksContainer {
-    background-image: url(https://justliv.org/assets/images/sky.png);
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    padding: 64px 20px 64px 20px;
-    height: 590px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
 }
 
-.howItWorksContainer h2{
-    font-size: 2.4rem;
-    font-family: 'Fraunces',serif;
-    font-weight: 400;
-    margin-bottom: 3.2rem;
-    color:white;
+.gridContainer .icon {
+  margin-bottom: 8px;
+}
+.gridContainer li {
+  padding: 24px;
+  box-shadow: 0 0 16px 2px #0000000d;
+  font-size: 1.6rem;
+  color: #959aa2;
+  font-weight: 400;
+  font-family: "Lato", serif;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-.contentHowItWorks{
-    width: 576px;
-    box-sizing: content-box;
-    margin: auto;
-    margin-top:0px;
-    position: relative;
+.gridContainer li h1 {
+  margin-bottom: 8px;
+  font-family: "Fraunces", serif;
+  font-size: 2.1rem;
+  color: #384252;
 }
 
-.contentHowItWorks span{
-    display: flex;
-    align-items: center;
-    margin-bottom: 48px;
+.gridContainer li p {
+  margin-bottom: 16px;
 }
 
-.contentHowItWorks .hiwIconBox{
-    background-color: #51658e;
-    border-radius: 0.5rem;
-    width: 60px;
-    height: 60px;
-    padding:1.6rem;
-    margin-right: 24px;
-    
+.gridContainer img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-top: auto; /* Keeps the image at the bottom */
 }
 
-.hiwColContent{
-    display: flex;
-    flex-direction: column;
+.howItWorksContainer {
+  background-image: url(https://justliv.org/assets/images/sky.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 64px 20px 64px 20px;
+  height: 590px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.howItWorksContainer h2 {
+  font-size: 2.4rem;
+  font-family: "Fraunces", serif;
+  font-weight: 400;
+  margin-bottom: 3.2rem;
+  color: #cccfd6;
+}
+
+.contentHowItWorks {
+  max-width: 576px;
+  width:100%;
+  box-sizing: content-box;
+  margin: auto;
+  margin-top: 0px;
+  position: relative;
+}
+
+.contentHowItWorks span {
+  display: flex;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.contentHowItWorks .hiwIconBox {
+  background-color: #51658e;
+  border-radius: 0.5rem;
+  width: 60px;
+  height: 60px;
+  padding: 1.6rem;
+  margin-right: 24px;
+}
+
+.hiwColContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+  width: 468px;
+}
+
+.hiwColContent h1 {
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-family: "Lato", serif;
+}
+
+.hiwColContent h2 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: "Lato", serif;
+  margin: 0;
+}
+
+.contentHowItWorks .image0 {
+  width: 42px;
+  height: 45px;
+  position: absolute;
+  top: 60px;
+  left: 80px;
+}
+
+.contentHowItWorks .image1 {
+  width: 48px;
+  height: 61px;
+  position: absolute;
+  top: 180px;
+  left: 137px;
+}
+
+.missionContainer {
+  padding: 80px 0 80px 0;
+}
+
+.mcMarginContainer{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding:0 24px;
+}
+
+.mcContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 550px;
+}
+
+.mcContent h2 {
+  font-weight: 400;
+  font-size: 2.4rem;
+  font-family: "Fraunces", serif;
+  margin-bottom: 16px;
+  color: oklch(21% 0.006 285.885);
+  position: relative;
+}
+
+.mcp1 {
+  text-align: center;
+  padding: 0px 16px;
+  margin-bottom: 24px;
+  color: #384252;
+  font-family: "Lato", serif;
+  font-size: 1.6rem;
+  padding: 0px 16px;
+}
+
+.rhImage {
+  position: absolute;
+  left: 240px;
+  top: -20px;
+}
+
+.mcp2 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.mcpNormal {
+  font-size: 1.6rem;
+  font-family: "Lato", serif;
+  font-weight: 400;
+  color: oklch(21% 0.006 285.885);
+}
+
+.mcpBlack {
+  font-weight: 700;
+  font-size: 2.2rem;
+  font-family: "Lato", serif;
+  color: oklch(21% 0.006 285.885);
+}
+
+.mcpPink {
+  font-weight: 700;
+  font-size: 2.2rem;
+  font-family: "Lato", serif;
+  color: #ff8095;
+}
+
+.mcp3 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: "Lato", serif;
+  color: #384252;
+  margin-bottom: 24px;
+}
+
+.mcContent img {
+  width: 512px;
+  height: auto;
+  margin: 0 19px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+.container5 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(https://justliv.org/assets/images/girls.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; /* 👈 Adjust this */
+  height: 433px;
+}
+
+.c5Content {
+  max-width: 448px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c5Button {
+  height: 40px;
+}
+
+.c5Content h1 {
+  font-family: "Fraunces", serif;
+  font-weight: 400;
+  color: white;
+  font-size: 2.4rem;
+  margin-bottom: 8px;
+}
+
+.c5Content p {
+  font-family: "Lato", serif;
+  font-weight: 400;
+  color: white;
+  font-size: 1.6rem;
+  margin-bottom: 32px;
+}
+
+.footer {
+  padding: 64px 0px;
+  background-color: #3a4e78;
+}
+
+.fcontainer {
+  width: 100%;
+  padding: 0px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fcImage {
+  margin-bottom: 32px;
+  width: 116px;
+  height: 50.65px;
+}
+
+.fcSpan {
+  color: white;
+  font-size: 1.6rem;
+  font-family: "Lato", serif;
+  font-weight: 400;
+  display: flex;
+}
+
+.fcInstaIcon {
+  margin-right: 8px;
+}
+
+.fcLowerContainer {
+  padding-top: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.fcPara {
+  color: white;
+  font-size: 1.6rem;
+  font-family: "Lato", serif;
+  font-weight: 400;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.fcLinkedin {
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 640px) {
+  .gridContainer ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  
+}
+
+
+
+@media screen and (min-width: 1024px) {
+  .gridContainer ul{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+}
+
+
+@media screen and (max-width:639px) {
+  .gridContainer ul{
+    grid-template-columns: repeat(1,minmax(0,1fr));
+  }
+
+  .content{
     align-items: flex-start;
-    color:white;
-    width: 468px;
-}
+  }
 
-.hiwColContent h1{
+  .content h1{
+    font-size: 2.7rem;
+    text-align: start;
+    text-wrap: wrap;
+  }
+
+  .content p{
     font-size: 1.8rem;
-    margin-bottom: 4px;
-    font-weight: 600;
-    font-family: 'Lato',serif;
-
+  }
+  .cardContainer{
+    padding: 80px 20px;
+  }
 }
 
+@media screen and (max-width:648px) {
+  .banner{
+    display: none;
+  }
 
-.hiwColContent h2{
-    font-size: 1.6rem;
-    font-weight: 400;   
-    font-family: 'Lato',serif;
+  .bannerMobile{
+    display: block;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .howItWorksContainer h2{
+   width: 100%;
+  }
+
+  .container5{
+    background-image: url(https://justliv.org/assets/images/girlMobile.png);
+    padding:0 16px;
+  }
+
+  .mcContent{
+    max-width: 360px; 
+    width: 100%;
+    align-items: flex-start;
+    margin:auto;
+  }
+
+  .mcContent img{
+    max-width: 312px; 
+    width: 100%;
+    height: auto;
     margin:0;
+  }
 
+  .rhImage{
+    left:300px;
+  }
+  
+
+  .mcp1{
+    text-align: start;
+    padding:0;
+  }
+
+  .mcp2{
+    text-align: start;
+  }
 }
 
-.contentHowItWorks .image0{  
-    width: 42px;
-    height: 45px;
-    position:absolute;
-    z-index: 100;
-    top:60px;
-    left: 80px;
+@media screen and (max-width:510px){
+
+  .contentHowItWorks span{
+    margin-bottom:53px;
+  }
+
+  .contentHowItWorks .image0{
+    top:70px;
+  }
+
+  .contentHowItWorks .image1{
+    top:210px;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .contentHowItWorks .image1{
+    top:230px;
+  }
 }
 
 
-.contentHowItWorks .image1{
-    width: 48px;
-    height: 61px;
-    position:absolute;
-    z-index: 100;
-    top:180px;
-    left:137px;
+@media screen and (max-width:393px) {
+  .rhImage{
+    left:270px;
+  }
+}
+
+@media  screen and (max-width: 350px) {
+  .rhImage{
+    left:200px;
+  }
 }

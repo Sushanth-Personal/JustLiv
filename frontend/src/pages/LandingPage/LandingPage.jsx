@@ -1,5 +1,5 @@
 import styles from "./LandingPage.module.css";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 
 const IconSVG = ({ type, color }) => {
   return (
@@ -98,6 +98,49 @@ const IconSVG = ({ type, color }) => {
           ></path>
         </svg>
       )}
+      {type === "instagram" && (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-instagram w-6 h-6"
+        >
+          <rect
+            width="20"
+            height="20"
+            x="2"
+            y="2"
+            rx="5"
+            ry="5"
+          ></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+        </svg>
+      )}
+      {type === "linkedin" && (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-linkedin w-6 h-6"
+        >
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+          <rect width="4" height="12" x="2" y="9"></rect>
+          <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+      )}
     </>
   );
 };
@@ -153,7 +196,11 @@ const LandingPage = () => {
           src="https://justliv.org/assets/images/hero.png"
           alt="hero"
         />
-
+ <img
+          className={styles.bannerMobile}
+          src="https://justliv.org/assets/images/heroMobile.png"
+          alt="heromobile"
+        />
         <div className={styles.content}>
           <h1>Your Child's Perfect Schedule in Just a Few Clicks</h1>
           <p>Less Planning, More Living.</p>
@@ -204,6 +251,86 @@ const LandingPage = () => {
               />
             </>
           ))}
+        </div>
+      </div>
+      <div className={styles.missionContainer}>
+        <div className = {styles.mcMarginContainer}>
+          <div className={styles.mcContent}>
+            <h2>
+              Our Mission
+              <div className={styles.rhImage}>
+                <IconSVG type="redHearts" />
+              </div>
+            </h2>
+            <p className={styles.mcp1}>
+              Parents need a simple way to find, book, and track their
+              kids activities. Businesses need a better way to be found
+              and to keep families coming back.
+            </p>
+            <p className={styles.mcp2}>
+              <span className={styles.mcpNormal}>
+                Our purpose is to
+              </span>
+              <br />
+              <span className={styles.mcpBlack}>
+                make parents lives{" "}
+              </span>
+              <span className={styles.mcpPink}>
+                easier
+                <span className={styles.mcpBlack}>, </span>
+                happier
+                <span className={styles.mcpBlack}>, </span>
+                <span>and </span>
+                less stressful
+                <span className={styles.mcpBlack}>.</span>
+              </span>
+            </p>
+            <p className={styles.mcp3}>
+              As parents and business owners, we get it.
+            </p>
+            <img
+              src="https://justliv.org/assets/images/family.png"
+              alt="family"
+            />
+          </div>
+        </div>
+      </div>
+      <div className={styles.container5}>
+        <div className={styles.c5Content}>
+          <h1>Ready to Simplify Your Life?</h1>
+          <p>
+            Be the first to know when we launch! Join our waiting list
+            and get exclusive updates and early access to our journey.
+          </p>
+          <button
+            className={`${styles.waitingListButton} ${styles.c5Button}`}
+          >
+            <IconSVG type="sparkle" />
+            Join the waiting list
+          </button>
+        </div>
+      </div>
+      <div className={styles.footer}>
+        <div className={styles.fcontainer}>
+          <img
+            className={styles.fcImage}
+            src="https://justliv.org/assets/images/logo1.png"
+            alt="logo"
+          />
+          <span className={styles.fcSpan}>
+            <div className={styles.fcInstaIcon}>
+              <IconSVG type="instagram" />
+            </div>
+            Connect with us on Instagram ♡
+          </span>
+          <div className={styles.fcLowerContainer}>
+            <p className={styles.fcPara}>Privacy policy <br/><br/>Accessibility Statement</p>
+            
+            <p className={styles.fcLinkedin}>
+              <IconSVG type="linkedin" />
+            </p>
+            <p className={styles.fcPara}>© 2024 by JustLiv</p>
+          </div>
         </div>
       </div>
     </section>
